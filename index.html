@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Geo Guesser</title>
+    <link href="https://fonts.googleapis.com/css?family=Blinker|Saira+Stencil+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -15,8 +16,9 @@
         height: 80%;
         margin: 0;
         padding: 0;
-        background-image: url('https://imgur.com/8Z7Odka');
         text-align: center;
+        font-family: 'Saira Stencil One', cursive;
+        font-family: 'Blinker', sans-serif;
       }
       input{
           text-align: center;
@@ -27,38 +29,67 @@
           font-size: 20px;
           
       }
-      h1{
+      h1, #reset{
+          display: grid;
           text-align: center;
           color:#1B2F33;
       }
-      button{
+      #reset{
+        background-color: #7F7979;
+          margin: 5px;
+          color:white;
+          border-radius: 5%;
+          font-size: 20px;
+      }
+      #reset:hover{
+          background-color: white;
+          color: #7F7979;
+      }
+      #submit{
         background-color: #7F7979;
         color: white;
         border-radius: 5%;
         font-size: 20px;
       }
-      button:hover{
+      #submit:hover{
         background-color: white;
         color: #7F7979;
+      }
+      span, p{
+        font-size: 20px;
+        text-align: center;
+      }
+      #score{
+        font-size: 20px;
+        text-align: center;
+        padding: 5px;
+      }
+      #next{
+        background-color: #7F7979;
+        color: white;
+        border-radius: 5%;
+        font-size: 20px;
       }
     </style>
   </head>
   
   
   <body>
-      <h1>Guess the Location!</h1>
+      <h1>Guess the Location!</h1><button id="reset">reset</button>
     <div id="map"></div>
     <input>
-    <button id="submit">submit</button>
-    
-    
+    <button id="submit">submit</button><button id ="next">-></button>
+    <p>score:<span id= "score"></span></p>
 <script defer >
-
+      
       var map;
       var input = document.querySelector('input');
-      var submit = document.querySelector('button');
-
-      
+      var submit = document.querySelector('#submit');
+      var message = document.querySelector( 'span')
+      let dispVal = document.querySelector('p span')
+      let reset = document.querySelector('#reset')
+      let next = document.querySelector('#next')
+      var total;
       
 function initMap() {
         map = new google.maps.Map(document.getElementById('map'), 
@@ -111,57 +142,84 @@ function initMap6(){
 }
 //functions to initilaize each map
         function initializeSecondMap(){
+            next.addEventListener('click',function(){
+                initializeThirdMap()})
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'disneyland'){
-            initializeThirdMap();
-            input.value = ''
-            }
-        })
+                total += 250;
+                input.value = ''
+                render();
+                setTimeout(initializeThirdMap,1000);
+        
+        }
+            })
     }
     function initializeThirdMap(){
+        next.addEventListener('click',function(){
+                initializeFourthMap()})
         initMap2();
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'wrigely field'){
-            initializeFourthMap();
-            input.value = ''
+                total += 250;
+                input.value = ''
+                render();
+                setTimeout(initializeFourthMap,1000);
             }
     })
 }
     function initializeFourthMap(){
+        next.addEventListener('click',function(){
+            initializeFifthMap()})
         initMap3();
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'las vegas'){
-            initializeFifthMap();
-            input.value = ''
+                total += 250;
+                input.value = ''
+                render();
+                setTimeout(initializeFifthMap,1000);
             }
     })
 }
     function initializeFifthMap(){
+        next.addEventListener('click',function(){
+            initializeSixthMap()})
         initMap4();
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'venice'){
-            initializeSixthMap();
-            input.value = ''
+                total += 250;
+                input.value = ''
+                render();
+                setTimeout(initializeSixthMap,1000);
             }
     })
 }
     function initializeSixthMap(){
+        next.addEventListener('click',function(){
+            initializeSeventhMap()})
         initMap5();
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'quito'){
-            initializeSeventhMap();
+                console.log('return')
             input.value = ''
             }
     })
 }
-    
+
+
+
+function init(){
+    total = 0 ;
+    render();
+}
     
     
 function render(){
-initializeSecondMap();
+    dispVal.innerHTML = total;
+    initializeSecondMap();
 
 }
-render();
+
+init();
    </script>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA4bVDfifm_K9P5cZGttjGNgl_hB8taZk&callback=initMap"
