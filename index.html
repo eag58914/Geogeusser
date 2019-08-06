@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 80%;
+        margin: 0;
+        padding: 0;
+      }
+      input{
+          text-align: center;
+      }
+      h1{
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>Guess the Location!</h1>
+    <div id="map"></div>
+    <input>
+    <button id="submit">submit</button>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ <script defer >
+
+
+
+
+      var map;
+      var input = document.querySelector('input');
+      var submit = document.querySelector('button');
+
+      
+      
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 33.812511, lng: -117.918976},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+    }
+function initMap2(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 41.9484, lng: -87.6553},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+}
+function initMap3(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 36.1699, lng: -115.1398},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+}
+
+
+
+
+
+        function initializeSecondMap(){
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'disneyland'){
+            initializeThirdMap();
+            input.value = ''
+            console.log('started third map')
+            }
+        })
+    }
+    function initializeThirdMap(){
+        initMap2();
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'wrigely field'){
+            initializeFifthMap();
+            input.value = ''
+            }
+    })
+}
+    function initializeFifthMap(){
+        initMap3();
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'las vegas'){
+            initializeSixthMap();
+            input.value = ''
+            }
+    })
+}
+    function initializeSixthMap(){
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'fenway park'){
+            initializeFourthMap();
+            input.value = ''
+            }
+    })
+}
+    function initializeSeventhMap(){
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'fenway park'){
+            initializeFourthMap();
+            input.value = ''
+            }
+    })
+}
+    function initializeEightMap(){
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'fenway park'){
+            initializeFourthMap();
+            input.value = ''
+            }
+    })
+}
+    
+    
+function render(){
+initializeSecondMap();
+
+}
+render();
+   
+   
+   
+   
+   
+   </script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA4bVDfifm_K9P5cZGttjGNgl_hB8taZk&callback=initMap"
+    async defer></script>
+  </body>
+</html>
