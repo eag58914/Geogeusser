@@ -15,15 +15,36 @@
         height: 80%;
         margin: 0;
         padding: 0;
+        background-image: url('https://imgur.com/8Z7Odka');
+        text-align: center;
       }
       input{
           text-align: center;
+          border: solid #475B5A;
+          border-radius: 5%;
+          margin: 5px;
+          padding: 5px ;
+          font-size: 20px;
+          
       }
       h1{
           text-align: center;
+          color:#1B2F33;
+      }
+      button{
+        background-color: #7F7979;
+        color: white;
+        border-radius: 5%;
+        font-size: 20px;
+      }
+      button:hover{
+        background-color: white;
+        color: #7F7979;
       }
     </style>
   </head>
+  
+  
   <body>
       <h1>Guess the Location!</h1>
     <div id="map"></div>
@@ -31,20 +52,7 @@
     <button id="submit">submit</button>
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- <script defer >
-
-
-
+<script defer >
 
       var map;
       var input = document.querySelector('input');
@@ -52,7 +60,7 @@
 
       
       
-      function initMap() {
+function initMap() {
         map = new google.maps.Map(document.getElementById('map'), 
         {
           center: {lat: 33.812511, lng: -117.918976},
@@ -76,17 +84,37 @@ function initMap3(){
           mapTypeId: 'satellite'
         });
 }
+function initMap4(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 45.444958, lng: 12.328463},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+}
 
-
-
-
-
+function initMap5(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: -0.180653, lng: -78.467834},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+}
+function initMap6(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 51.509865, lng: -0.118092},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+}
+//functions to initilaize each map
         function initializeSecondMap(){
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'disneyland'){
             initializeThirdMap();
             input.value = ''
-            console.log('started third map')
             }
         })
     }
@@ -94,44 +122,39 @@ function initMap3(){
         initMap2();
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'wrigely field'){
+            initializeFourthMap();
+            input.value = ''
+            }
+    })
+}
+    function initializeFourthMap(){
+        initMap3();
+        submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'las vegas'){
             initializeFifthMap();
             input.value = ''
             }
     })
 }
     function initializeFifthMap(){
-        initMap3();
+        initMap4();
         submit.addEventListener('click',function(){
-            if(input.value.toLowerCase() === 'las vegas'){
+            if(input.value.toLowerCase() === 'venice'){
             initializeSixthMap();
             input.value = ''
             }
     })
 }
     function initializeSixthMap(){
+        initMap5();
         submit.addEventListener('click',function(){
-            if(input.value.toLowerCase() === 'fenway park'){
-            initializeFourthMap();
+            if(input.value.toLowerCase() === 'quito'){
+            initializeSeventhMap();
             input.value = ''
             }
     })
 }
-    function initializeSeventhMap(){
-        submit.addEventListener('click',function(){
-            if(input.value.toLowerCase() === 'fenway park'){
-            initializeFourthMap();
-            input.value = ''
-            }
-    })
-}
-    function initializeEightMap(){
-        submit.addEventListener('click',function(){
-            if(input.value.toLowerCase() === 'fenway park'){
-            initializeFourthMap();
-            input.value = ''
-            }
-    })
-}
+    
     
     
 function render(){
@@ -139,11 +162,6 @@ initializeSecondMap();
 
 }
 render();
-   
-   
-   
-   
-   
    </script>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA4bVDfifm_K9P5cZGttjGNgl_hB8taZk&callback=initMap"
