@@ -1,0 +1,112 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+	height: 80%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Saira Stencil One', cursive;
+	font-family: 'Blinker', sans-serif;
+	background-image: url('https://i.imgur.com/8Z7Odka.jpg');
+	background-size: 100%;
+}
+#map,
+#pano {
+	float: left;
+	height: 100%;
+	width: 49%;
+	margin: 3px;
+	border: solid;
+	box-shadow: 5px 5px 5px black;
+}
+.map-control {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+	font-family: 'Roboto', 'sans-serif';
+	margin: 10px;
+	padding-right: 5px;
+	/* Hide the control initially, to prevent it from appearing
+           before the map loads. */
+	display: none;
+}
+.gm-iv-address {
+	opacity: 0;
+}
+/* Display the control once it is inside the map. */
+#map .map-control {
+	display: block;
+}
+
+.selector-control {
+	font-size: 14px;
+	line-height: 30px;
+	vertical-align: baseline;
+}
+input {
+	text-align: center;
+	border: solid #475b5a;
+	border-radius: 5%;
+	margin: 5px;
+	padding: 5px;
+	font-size: 20px;
+	box-shadow: 2px 2px 5px black;
+}
+h1,
+#reset {
+	display: grid;
+	text-align: center;
+	color: #e5f4e3;
+}
+#reset {
+	background-color: #7f7979;
+	margin: 5px;
+	color: white;
+	border-radius: 5%;
+	font-size: 20px;
+	box-shadow: 2px 2px 5px black;
+}
+#reset:hover {
+	background-color: white;
+	color: #7f7979;
+	box-shadow: 2px 2px 5px black;
+}
+#earth {
+	width: 30px;
+	height: 30px;
+}
+#submit {
+	background-color: #7f7979;
+	color: white;
+	border-radius: 5%;
+	font-size: 20px;
+	box-shadow: 2px 2px 5px black;
+}
+#submit:hover {
+	background-color: white;
+	color: #7f7979;
+}
+span,
+p {
+	font-size: 20px;
+	text-align: center;
+	color: #e5f4e3;
+}
+#score {
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	color: #e5f4e3;
+}
+#next {
+	background-color: #7f7979;
+	color: white;
+	border-radius: 5%;
+	font-size: 20px;
+	box-shadow: 2px 2px 5px black;
+}
