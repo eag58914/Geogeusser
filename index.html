@@ -20,6 +20,33 @@
         font-family: 'Saira Stencil One', cursive;
         font-family: 'Blinker', sans-serif;
       }
+      #map, #pano {
+        float: left; 
+        height: 100%;
+        width: 50%;
+      }
+      .map-control {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        font-family: 'Roboto','sans-serif';
+        margin: 10px;
+        padding-right: 5px;
+        /* Hide the control initially, to prevent it from appearing
+           before the map loads. */
+        display: none;
+      }
+      .gm-iv-address{
+          opacity: 0;
+      }
+      /* Display the control once it is inside the map. */
+      #map .map-control { display: block; }
+
+      .selector-control {
+        font-size: 14px;
+        line-height: 30px;
+        vertical-align: baseline;
+      }
       input{
           text-align: center;
           border: solid #475B5A;
@@ -77,6 +104,7 @@
   <body>
       <h1>Guess the Location!</h1><button id="reset">reset</button>
     <div id="map"></div>
+    <div id="pano"></div>
     <input>
     <button id="submit">submit</button><button id ="next">-></button>
     <p>score:<span id= "score"></span></p>
@@ -96,8 +124,21 @@ function initMap() {
         {
           center: {lat: 33.812511, lng: -117.918976},
           zoom: 18,
-          mapTypeId: 'satellite'
+          mapTypeId: 'satellite',
+          mapTypeControl: false,
+          disableDefaultUI: true,
+          fullscreenControl: false
         });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 33.812511, lng: -117.918976},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
+
     }
 function initMap2(){
     map = new google.maps.Map(document.getElementById('map'), 
@@ -106,6 +147,15 @@ function initMap2(){
           zoom: 18,
           mapTypeId: 'satellite'
         });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 41.9484, lng: -87.6553},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
 }
 function initMap3(){
     map = new google.maps.Map(document.getElementById('map'), 
@@ -114,6 +164,15 @@ function initMap3(){
           zoom: 18,
           mapTypeId: 'satellite'
         });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 36.1699, lng: -115.1398},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
 }
 function initMap4(){
     map = new google.maps.Map(document.getElementById('map'), 
@@ -122,6 +181,15 @@ function initMap4(){
           zoom: 18,
           mapTypeId: 'satellite'
         });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 45.444958, lng: 12.328463},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
 }
 
 function initMap5(){
@@ -131,6 +199,15 @@ function initMap5(){
           zoom: 18,
           mapTypeId: 'satellite'
         });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: -0.180653, lng: -78.467834},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
 }
 function initMap6(){
     map = new google.maps.Map(document.getElementById('map'), 
@@ -139,7 +216,84 @@ function initMap6(){
           zoom: 18,
           mapTypeId: 'satellite'
         });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 51.509865, lng: -0.118092},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
 }
+function initMap7(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 43.761539, lng: -79.411079},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 43.761539, lng: -79.411079},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+            map.setStreetView(panorama);
+        }
+function initMap8(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: -33.865143, lng: 151.209900},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: -33.865143, lng: 151.209900},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+            map.setStreetView(panorama);
+}
+ function initMap9(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 59.334591, lng: 18.063240},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 59.334591, lng: 18.063240},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+            map.setStreetView(panorama);
+ }
+ function initMap10(){
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+          center: {lat: 30.274375, lng:  -97.7408387},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'),{
+                position: {lat: 30.274375, lng:  -97.7408387},
+                pov:{
+                    heading:34,
+                    pitch: 10
+                }
+            });
+            map.setStreetView(panorama);
+ }
 //functions to initilaize each map
         function initializeSecondMap(){
             next.addEventListener('click',function(){
@@ -187,7 +341,7 @@ function initMap6(){
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'venice'){
                 total += 250;
-                input.value = ''
+                input.value = '';
                 render();
                 setTimeout(initializeSixthMap,1000);
             }
@@ -199,12 +353,79 @@ function initMap6(){
         initMap5();
         submit.addEventListener('click',function(){
             if(input.value.toLowerCase() === 'quito'){
-                console.log('return')
-            input.value = ''
+                total += 250;
+                input.value ='';
+                setTimeout(initializeSeventhMap,1000);
             }
     })
 }
-
+function initializeSeventhMap(){
+    next.addEventListener('click',function(){
+            initializeEigthMap()})
+            initMap7();
+            submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'toronto'){
+                total += 250;
+                input.value ='';
+                render();
+                setTimeout(initializeEigthMap,1000)
+            }
+    })
+function initializeEigthMap(){
+    next.addEventListener('click',function(){
+            initializeNinethMap()})
+            initMap8();
+            submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'sydney'){
+                total += 250;
+                input.value ='';
+                render();
+                setTimeout(initializeNinethMap,1000)
+            }
+        })
+}
+function initializeNinethMap(){
+    next.addEventListener('click',function(){
+            initializeTenthMap()})
+            initMap9();
+            submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'stockholm'){
+                total += 250;
+                input.value ='';
+                render();
+                setTimeout(initializeTenthMap,1000)
+            }
+        })
+}
+function initializeTenthMap(){
+    //next.addEventListener('click',function(){
+           // endGame()})
+            initMap10();
+            submit.addEventListener('click',function(){
+            if(input.value.toLowerCase() === 'austin'){
+                total += 250;
+                input.value ='';
+                render();
+                console.log('return')
+                //setTimeout(endGame,1000)
+            }
+        })
+}
+}
+var styles = {
+        default: null,
+        hide: [
+          {
+            featureType: 'poi.business',
+            stylers: [{visibility: 'off'}]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'labels.icon',
+            stylers: [{visibility: 'off'}]
+          }
+        ]
+      };
 
 
 function init(){
