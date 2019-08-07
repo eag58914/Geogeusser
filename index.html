@@ -102,7 +102,7 @@
   
   
   <body>
-      <h1>Guess the Location!</h1><button id="reset">reset</button>
+      <h1>Guess the Location!</h1><button id="reset" value="replay" onClick="window.location.reload();">reset</button>
     <div id="map"></div>
     <div id="pano"></div>
     <input>
@@ -305,9 +305,11 @@ function initMap8(){
                 render();
                 setTimeout(initializeThirdMap,1000);
         
+        }else{
+            submit.classList.add("apply-shake");
         }
-            })
-    }
+    })
+}
     function initializeThirdMap(){
         next.addEventListener('click',function(){
                 initializeFourthMap()})
@@ -318,8 +320,10 @@ function initMap8(){
                 input.value = ''
                 render();
                 setTimeout(initializeFourthMap,1000);
-            }
-    })
+            }else{
+            submit.classList.add("apply-shake");
+        }
+})
 }
     function initializeFourthMap(){
         next.addEventListener('click',function(){
@@ -332,6 +336,7 @@ function initMap8(){
                 render();
                 setTimeout(initializeFifthMap,1000);
             }
+
     })
 }
     function initializeFifthMap(){
@@ -345,6 +350,7 @@ function initMap8(){
                 render();
                 setTimeout(initializeSixthMap,1000);
             }
+
     })
 }
     function initializeSixthMap(){
@@ -357,6 +363,7 @@ function initMap8(){
                 input.value ='';
                 setTimeout(initializeSeventhMap,1000);
             }
+
     })
 }
 function initializeSeventhMap(){
@@ -370,6 +377,7 @@ function initializeSeventhMap(){
                 render();
                 setTimeout(initializeEigthMap,1000)
             }
+    
     })
 function initializeEigthMap(){
     next.addEventListener('click',function(){
@@ -394,7 +402,10 @@ function initializeNinethMap(){
                 input.value ='';
                 render();
                 setTimeout(initializeTenthMap,1000)
-            }
+            }else{
+            submit.classList.add("apply-shake");
+        }
+
         })
 }
 function initializeTenthMap(){
@@ -408,29 +419,17 @@ function initializeTenthMap(){
                 render();
                 console.log('return')
                 //setTimeout(endGame,1000)
-            }
+            }else{
+            submit.classList.add("apply-shake");
+        }
         })
 }
 }
-var styles = {
-        default: null,
-        hide: [
-          {
-            featureType: 'poi.business',
-            stylers: [{visibility: 'off'}]
-          },
-          {
-            featureType: 'transit',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'off'}]
-          }
-        ]
-      };
-
 
 function init(){
     total = 0 ;
     render();
+    
 }
     
     
@@ -439,6 +438,7 @@ function render(){
     initializeSecondMap();
 
 }
+
 
 init();
    </script>
