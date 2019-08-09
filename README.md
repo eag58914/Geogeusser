@@ -1,7 +1,9 @@
 # Geogeusser Game 
+
+# Wireframe: 
 ![wireframe](https://i.imgur.com/OHTsy1M.png)
 
-
+# Screenshot:
 ![Screenshot](https://i.imgur.com/HSNyTvq.jpg)
 
 
