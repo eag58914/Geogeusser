@@ -21,9 +21,15 @@ HTML, CSS, Javascript, Google Maps API
 
 [Game](http://kindhearted-use.surge.sh/)
 
+
 # Stretch goals
 
 * Add medium and hard difficulties using random maps from a dataset
 
 *  User can tweet their score and challenge others
 *  Users can choose a specific country 
+
+
+* Credits:
+
+[background image](https://www.freepik.com/free-psd/realistic-wood-background_957876.htm#page=1&query=wood%20background&position=0)
