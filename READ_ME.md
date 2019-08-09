@@ -1,8 +1,13 @@
 # Geogeusser Game 
+![wireframe](https://i.imgur.com/OHTsy1M.png)
+
+
 ![Screenshot](https://i.imgur.com/HSNyTvq.jpg)
+
+
 # Objective:
 
-Guess the correct location of the city or landmark to score points. You only need the city, not country.
+Guess the correct location of the city or landmark to score points. You only need the city, not country. No captialization needed, but spaces required.
 
 
 # Technologies:
@@ -10,7 +15,7 @@ Guess the correct location of the city or landmark to score points. You only nee
 HTML, CSS, Javascript, Google Maps API
 
 
-# Links:
+# Deploy Link:
 
 [Game](http://kindhearted-use.surge.sh/)
 
